@@ -1,9 +1,5 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 '''LockBoxes Challenge'''
-
-
-from multiprocessing.dummy import Array
-from typing import List
 
 
 def canUnlockAll(boxes):
@@ -29,9 +25,8 @@ def canUnlockAll(boxes):
             continue
         else:
             break
-    
+
     for i in range(length):
         if i not in opened_boxes and i != 0:
-            print(f'i = {i}  |  opened boxes : {opened_boxes}')
             return False
     return True
