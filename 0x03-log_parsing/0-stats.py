@@ -15,11 +15,14 @@ counter = 0
 
 try:
     for line in sys.stdin:
-        if re.match(regex, line):
+        line_list = line.split(" ")
+        if len(line_list) > 2:
+            code = line_list[-2]
+            size = int(line_list[-1])
+            if code in cache.keys():
+                cache[code] += 1
+            total_size += size
             counter += 1
-            res = re.search(regex, line)
-            total_size += int(res.group(4))
-            cache[res.group(3)] += 1
 
         if counter == 10:
             counter = 0
