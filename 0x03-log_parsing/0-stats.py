@@ -16,7 +16,7 @@ counter = 0
 try:
     for line in sys.stdin:
         line_list = line.split(" ")
-        if len(line_list) > 2:
+        if len(line_list) > 4:
             code = line_list[-2]
             size = int(line_list[-1])
             if code in cache.keys():
