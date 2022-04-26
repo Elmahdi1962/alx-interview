@@ -2,12 +2,8 @@
 '''a script that reads stdin line by line and computes metrics'''
 
 
-import re
 import sys
 
-so = '^((?:[0-9]{1,3}\.){3}[0-9]{1,3}) - (\[.+\]) '
-st = '"GET \/projects\/260 HTTP\/1.1" (\d+) (\d+)'
-regex = r'{}{}'.format(so, st)
 cache = {'200': 0, '301': 0, '400': 0, '401': 0,
          '403': 0, '404': 0, '405': 0, '500': 0}
 total_size = 0
