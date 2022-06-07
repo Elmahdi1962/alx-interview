@@ -11,16 +11,25 @@ def island_perimeter(grid):
     for lst_idx, lst in enumerate(grid):
         for land_idx, land in enumerate(lst):
             if land == 1:
+                '''
+                if land_idx == 0:
+                    # left side
+                    counter += 1
+
+                    # right side
+                    if lst[land_idx - 1] == 0:
+                        counter += 1'''
+
                 # left side
                 if lst[land_idx - 1] == 0:
                     counter += 1
 
-                # top side
-                if grid[lst_idx - 1][land_idx] == 0:
+                # right side
+                if lst[land_idx + 1] == 0:
                     counter += 1
 
-                # right side
-                if lst[land_idx - 1] == 0:
+                # top side
+                if grid[lst_idx - 1][land_idx] == 0:
                     counter += 1
 
                 # bottom side
